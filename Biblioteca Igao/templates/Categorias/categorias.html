@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Configurações gerais do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Categorias</title>
+    <!-- Importação do arquivo CSS usando Flask (diretório "static") -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Lista de Categorias</h1>
+    </header>
+
+    <main>
+        <!-- Título secundário -->
+        <h2>Categorias Cadastradas</h2>
+
+        <!-- Botões de ação -->
+        <div>
+            <a href="{{ url_for('bp_categories.add_category') }}" class="button">Adicionar Nova Categoria</a>
+        </div>
+
+        <!-- Tabela que exibirá os dados das categorias -->
+        <table>
+            <!-- Cabeçalho da tabela -->
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Ações</th> <!-- Coluna única para as ações -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iteração sobre a lista de categorias fornecida pelo back-end -->
+                {% for categoria in categorias %}
+                <tr>
+                    <!-- Exibição dos dados de cada categoria -->
+                    <td>{{ categoria.id }}</td> <!-- ID da categoria -->
+                    <td>{{ categoria.nome }}</td> <!-- Nome da categoria -->
+                    <td>
+                        <a href="{{ url_for('bp_categories.edit_category', id=categoria.id) }}" class="button">Editar</a>
+                        <a href="{{ url_for('bp_categories.delete_category', id=categoria.id) }}" class="button" method="POST">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <a href="{{ url_for('bp_categories.view_categories') }}" class="button">Voltar à Página Inicial</a>
+    </footer>
+
+</body>
+
+</html>
