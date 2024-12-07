@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Autores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Biblioteca Igao - Autores</h1>
+    </header>
+
+    <main>
+        <h2>Lista de Autores</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>Nacionalidade</th>
+                    <th>Livros</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for autor in autores %}
+                    <tr>
+                        <td>{{ autor.nome }}</td>
+                        <td>{{ autor.data_nascimento }}</td>
+                        <td>{{ autor.nacionalidade }}</td>
+                        <td>
+                            <ul>
+                                {% for livro in autor.livros %}
+                                    <li>{{ livro.titulo }} ({{ livro.ano_publicacao }})</li>
+                                {% else %}
+                                    <li>Sem livros</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('bp_autores.edit_autor', id=autor.id) }}" class="button">Editar</a>
+                            <a href="{{ url_for('bp_autores.delete_autor', id=autor.id) }}" class="button">Excluir</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('bp_inicio.index') }}" class="button">Adicionar Autor</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Biblioteca Igao - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
