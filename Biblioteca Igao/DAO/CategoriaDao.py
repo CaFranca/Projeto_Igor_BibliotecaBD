@@ -61,3 +61,5 @@ class CategoriaDAO:
     @staticmethod
     def getCategoryById(id):
         return Categorias.query.get(id)
+
+#By CaVibezz
