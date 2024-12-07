@@ -118,3 +118,5 @@ class LivroDAO:
         
         # Retorna a lista de livros conforme os filtros
         return query.all()
+
+#By CaVibezz
