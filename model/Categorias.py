@@ -15,3 +15,4 @@ class Categorias(database.Model):
             "nome": self.nome,
             "livros": [livro.JSonificar() for livro in self.livros]  # Lista de livros da categoria em JSON
         }
+#By CaVibezz
