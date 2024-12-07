@@ -69,3 +69,5 @@ def delete_category(id):
     else:  # Se for False, ocorreu um erro ao excluir
         return "Erro ao excluir a categoria", 400  # Retorna a mensagem de erro com código 400
 
+#By CaVibezz
+
