@@ -12,3 +12,6 @@ def index():
     categorias=CategoriaDAO.searchCategories()
     autores=AutorDAO.searchAutores()
     return render_template("home.html", livros=livros, autores=autores, categorias=categorias)
+
+
+#By CaVibezz
