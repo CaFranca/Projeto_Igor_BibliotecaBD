@@ -27,3 +27,6 @@ app.register_blueprint(padraoController, url_prefix="/")
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+#By CaVibezz
