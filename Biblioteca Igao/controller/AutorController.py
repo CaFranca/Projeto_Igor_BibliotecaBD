@@ -54,6 +54,8 @@ def delete_autor(id):
     autor_repo.deleteAutor(id)
     return redirect(url_for('bp_autores.view_autores'))  # Redireciona para a lista de autores
 
+#By CaVibezz
+
 @authorController.route("/")
 def index():
 
