@@ -70,3 +70,5 @@ class AutorDAO:
             database.session.rollback()
             print(f"Erro ao excluir autor: {e}")
             return False
+
+#By CaVibezz
