@@ -13,3 +13,6 @@ def init_database(app):
     with app.app_context():
         database.init_app(app)  # Conecta o SQLAlchemy à aplicação
         database.create_all()  # Cria as tabelas no banco de dados
+
+
+#By CaVibezz
