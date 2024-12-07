@@ -58,3 +58,5 @@ def delete_autor(id):
 def index():
 
     return redirect(url_for('bp_autores.view_autores'))
+
+#By CaVibezz
