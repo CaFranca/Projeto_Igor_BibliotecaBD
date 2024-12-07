@@ -19,3 +19,6 @@ class Autores(database.Model):
             "nacionalidade": self.nacionalidade,
             "livros": [livro.JSonificar() for livro in self.livros]  # Lista de livros do autor em JSON
         }
+
+
+#By CaVibezz
