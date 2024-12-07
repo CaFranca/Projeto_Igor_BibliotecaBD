@@ -138,3 +138,6 @@ def delete_book(id):
 @livroController.route("/")
 def books_home():
     return redirect(url_for('bp_books.view_books'))
+
+
+#By CaVibezz
