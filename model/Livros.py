@@ -29,3 +29,7 @@ class Livros(database.Model):
             "autor": self.autor.nome if self.autor else "Autor não definido",
             "categoria": self.categoria.nome if self.categoria else "Categoria não definida"
         }
+
+
+
+#By CaVibezz
